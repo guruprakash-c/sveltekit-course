@@ -26,8 +26,8 @@ let options = [
     on:change={handleSelect}
 >
     <option value="">-- Select --</option>
-    {#each options as option}
-        <option value={option.id}>{option.text}</option>
+    {#each options as {id,text}, i}
+        <option data-id={i} value={id}>{text}</option>
     {/each}
 </select>
 {#if selectedOption > 3 && selectedOption <= 5 }
