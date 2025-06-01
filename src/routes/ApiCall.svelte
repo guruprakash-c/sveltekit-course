@@ -23,7 +23,6 @@ const getCats = async () => {
     })
 }
 const selectedCats = (s:string,n:string) => {
-    debugger;
     src = s; 
     name = n;
 }
