@@ -20,7 +20,7 @@ let options = [
     }
 ];
 </script>
-
+<h1>Svelte JS : Conditions & Looping</h1>
 <select 
     bind:value={selectedOption} 
     on:change={handleSelect}
