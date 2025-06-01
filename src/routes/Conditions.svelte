@@ -30,4 +30,15 @@ let options = [
         <option value={option.id}>{option.text}</option>
     {/each}
 </select>
-<p>{handleSelect}</p>
+{#if selectedOption > 3 && selectedOption <= 5 }
+<p class="text-success">{handleSelect}</p>
+{:else if selectedOption > 1 && selectedOption <= 3 }
+<p class="text-info">{handleSelect}</p>
+{:else} 
+<p class="text-danger">{handleSelect}</p>
+{/if}
+<style>
+.text-success{ color: green }
+.text-info{ color: blue }
+.text-danger{ color: red }
+</style>
