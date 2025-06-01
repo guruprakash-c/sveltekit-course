@@ -7,3 +7,18 @@ export let name = 'Run';
 <img {src} alt={name} width="100"/>
 <figcaption><a href="{src}" target="_blank">{name}</a></figcaption>
 </figure>
+
+<style>
+    figure {
+        max-width: 200px; 
+        background: #eee;
+        border-radius: 12px
+    }
+    figure img{
+        max-width: 100%; 
+    }
+    figcaption a{
+        color: blue;
+        text-decoration: none; 
+    }
+</style>

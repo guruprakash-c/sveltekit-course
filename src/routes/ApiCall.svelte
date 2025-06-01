@@ -1,6 +1,7 @@
 <script lang="ts">
+import { fade, fly, slide, crossfade } from 'svelte/transition';
+import { flip } from 'svelte/animate';
 import FirstComponent from './FirstComponent.svelte';
-
 let src:string = '';
 let name:string = '';
 
@@ -28,18 +29,23 @@ const selectedCats = (s:string,n:string) => {
 }
 </script>
 <h1>Svelte JS : API Call</h1>
-<div class="buttons">
+<div in:slide class="buttons">
     {#await getCats() }
     <div class="loader"/>
     {:then cats }
     {#each cats as {src, name}, i}
-    <button on:click={() => selectedCats(src, name)}>🐈 -  Cat #{i}</button>
+    <button  
+        on:click={() => selectedCats(src, name)}>🐈 -  Cat #{i}</button>
     {/each}
     {:catch error}
     <p class="error">{error}</p>
     {/await}
 </div>
+{#key src}
+<div in:fade={{ duration: 2000 }} out:fade>
 <FirstComponent {src} {name}/>
+</div>
+{/key}
 <style>
 .buttons{
     display: flex; 
